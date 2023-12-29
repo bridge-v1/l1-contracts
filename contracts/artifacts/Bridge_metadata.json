@@ -1,0 +1,373 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract ISwapRouter",
+						"name": "_swapRouter",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "relayer",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "swapId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isPrivate",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "inTokenId",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "outTokenId",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "inTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "outTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "l2Address",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "l2SecretHash",
+						"type": "string"
+					}
+				],
+				"name": "SwapCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "swapId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "outTokenAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "SwapExecuted",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "l2TokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "l1TokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "addToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "swapId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isPrivate",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint8",
+						"name": "inTokenId",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "outTokenId",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "inTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "l2Address",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "l2SecretHash",
+						"type": "string"
+					}
+				],
+				"name": "createSwap",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "swapId",
+						"type": "uint256"
+					}
+				],
+				"name": "executeSwap",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "relayers",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "swapRouter",
+				"outputs": [
+					{
+						"internalType": "contract ISwapRouter",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "swaps",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "isPrivate",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint8",
+						"name": "inTokenId",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "outTokenId",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "inTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "outTokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "l2Address",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "l2SecretHash",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isExecuted",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "tokens",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Bridge.sol": "Bridge"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+				"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+			]
+		},
+		"@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol": {
+			"keccak256": "0x3f485fb1a44e8fbeadefb5da07d66edab3cfe809f0ac4074b1e54e3eb3c4cf69",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://095ce0626b41318c772b3ebf19d548282607f6a8f3d6c41c13edfbd5370c8652",
+				"dweb:/ipfs/QmVDZfJJ89UUCE1hMyzqpkZAtQ8jUsBgZNE5AMRG7RzRFS"
+			]
+		},
+		"@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol": {
+			"keccak256": "0x9bfaf1feb32814623e627ab70f2409760b15d95f1f9b058e2b3399a8bb732975",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://a8a2c3e55965b61bcd91993d8e1d5d34b8b8a63e0fdfce87a85f6af92526fd53",
+				"dweb:/ipfs/QmQj2CSCSwqDSU4KMNWxGsN2336Cy64WgpV1X1EHXNZWxM"
+			]
+		},
+		"@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol": {
+			"keccak256": "0x9af98b0908c96320ca6d08b22f0efca864742f6adbe5794cafe2d1d2e808b0cd",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://da1d1e81e5bf534f0bf2934b3193db6cb1933f91ec006d2b88e9ad10a617a2d2",
+				"dweb:/ipfs/QmcPBk47QLMFWcX2y2S9eMFsJgoYWBd3R8ey55Bgmv6w6v"
+			]
+		},
+		"contracts/Bridge.sol": {
+			"keccak256": "0x3aeb8cf0cc6610a786dcf2bc5909ce72870c1d1c0b64934ca9d39b3db5dee305",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0506c7dfdf9332a621a096aba547d53aca499e84ac845521cafb19d6c59a1134",
+				"dweb:/ipfs/QmcuNA1anzZH2VjfRefUXA8QhXKgQoxmLf42fFdRmFYYVh"
+			]
+		}
+	},
+	"version": 1
+}

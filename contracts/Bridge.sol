@@ -43,7 +43,7 @@ contract Bridge {
     }
 
     function createSwap(uint swapId, bool isPrivate, uint8 inTokenId, uint8 outTokenId, uint256 inTokenAmount, string memory l2Address, string memory l2SecretHash) public onlyAdmin {
-        require(swaps[swapId].inTokenAmount != 0, "Swap already exists!");
+        require(swaps[swapId].inTokenAmount == 0, "Swap already exists!");
 
         swaps[swapId] = Swap(isPrivate, inTokenId, outTokenId, inTokenAmount, 0, l2Address, l2SecretHash, false);
 
@@ -51,6 +51,8 @@ contract Bridge {
     }
 
     function executeSwap(uint swapId) public {
+        require(!swaps[swapId].isExecuted, "Swap has already been executed!");
+
         address inToken = tokens[swaps[swapId].inTokenId];
         address outToken = tokens[swaps[swapId].outTokenId];
 
@@ -65,7 +67,7 @@ contract Bridge {
                 tokenIn: inToken,
                 tokenOut: outToken,
                 fee: 3000,
-                recipient: msg.sender,
+                recipient: address(this),
                 deadline: block.timestamp,
                 amountIn: swaps[swapId].inTokenAmount,
                 amountOutMinimum: 0,
