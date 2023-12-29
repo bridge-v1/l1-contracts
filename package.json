@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "@openzeppelin/truffle-upgrades": "^1.15.0",
+    "truffle-plugin-verify": "^0.5.32"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "4.6.0",
+    "@truffle/hdwallet-provider": "^2.1.13",
+    "@uniswap/v3-periphery": "^1.4.4",
+    "openzeppelin-solidity": "4.6.0",
+    "prompt-sync": "^4.2.0",
+    "truffle-hdwallet-provider": "^1.0.17"
+  }
+}
