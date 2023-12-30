@@ -202,6 +202,32 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "swapId",
+						"type": "uint256"
+					}
+				],
+				"name": "resetSwap",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "resetSwaps",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "swapRouter",
 				"outputs": [
@@ -361,11 +387,11 @@
 			]
 		},
 		"contracts/Bridge.sol": {
-			"keccak256": "0x3aeb8cf0cc6610a786dcf2bc5909ce72870c1d1c0b64934ca9d39b3db5dee305",
+			"keccak256": "0x6ba08f6c6dec4ebcbe97ab2e9697357b5a39fea394d55763680f845a88b004f5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0506c7dfdf9332a621a096aba547d53aca499e84ac845521cafb19d6c59a1134",
-				"dweb:/ipfs/QmcuNA1anzZH2VjfRefUXA8QhXKgQoxmLf42fFdRmFYYVh"
+				"bzz-raw://6dfed18b0458174959247dcdd3609d3d0adb51a19316f49a65820c76f36c7f00",
+				"dweb:/ipfs/QmPiJkt3rhsUmngDJisPF8zA3PmYfxPJQWs3AesZWBVJgv"
 			]
 		}
 	},

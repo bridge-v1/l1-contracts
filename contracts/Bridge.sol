@@ -81,6 +81,16 @@ contract Bridge {
         swaps[swapId].isExecuted = true;
     }
 
+    function resetSwaps(uint amount) public onlyAdmin {
+        for (uint i = 0; i < amount; i++) {
+            delete swaps[i];
+        }
+    }
+
+    function resetSwap(uint swapId) public onlyAdmin {
+        delete swaps[swapId];
+    }
+
     function withdraw(address token) public onlyAdmin {
         uint balance = IERC20(token).balanceOf(address(this));
         IERC20(token).approve(address(this), balance);
